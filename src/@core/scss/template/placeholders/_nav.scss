@@ -10,7 +10,10 @@
     For vertical nav it will be only applied to nav links (not nav groups)
 */
 %nav-link-active {
-  background: linear-gradient(72.47deg, rgb(var(--v-global-theme-primary)) 22.16%, rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
+  // !!!改变主题渐变色
+  // background: linear-gradient(72.47deg, rgb(var(--v-global-theme-primary)) 22.16%, rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
+  // !!!  修改阴影
+  // box-shadow: 0 2px 6px rgba(var(--v-global-theme-primary), 0.48);
   box-shadow: 0 2px 6px rgba(var(--v-global-theme-primary), 0.48);
   font-weight: 500;
 }
