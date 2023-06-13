@@ -1,130 +1,73 @@
 <script setup>
-import avatar1 from '@images/avatars/avatar-1.png'
+const logout = () => {
+  console.log("out");
+};
 </script>
 
 <template>
-  <VBadge
+  <!-- <VBadge
     dot
     location="bottom right"
     offset-x="3"
     offset-y="3"
     bordered
     color="success"
-  >
-    <VAvatar
-      class="cursor-pointer"
-      color="primary"
-      variant="tonal"
-    >
-      <VImg :src="avatar1" />
+  > -->
+  <div class="userData">
+    <p class="mb-0 userName">{{ "Ping32" }}</p>
+    <small class="userRole">{{ "超级管理员" }}</small>
+  </div>
+  <VAvatar class="cursor-pointer" color="primary" variant="tonal">
+    <!-- <VImg :src="avatar1" /> -->
+    <VIcon size="20" icon="tabler-user-cog" />
+    <!-- SECTION Menu -->
+    <VMenu activator="parent" width="230" location="bottom end" offset="14px">
+      <VList>
+        <!-- 👉 Settings -->
+        <VListItem link>
+          <template #prepend>
+            <VIcon class="me-2" icon="tabler-settings" size="22" />
+          </template>
+          <VListItemTitle>用户设置</VListItemTitle>
+        </VListItem>
 
-      <!-- SECTION Menu -->
-      <VMenu
-        activator="parent"
-        width="230"
-        location="bottom end"
-        offset="14px"
-      >
-        <VList>
-          <!-- 👉 User Avatar & Name -->
-          <VListItem>
-            <template #prepend>
-              <VListItemAction start>
-                <VBadge
-                  dot
-                  location="bottom right"
-                  offset-x="3"
-                  offset-y="3"
-                  color="success"
-                >
-                  <VAvatar
-                    color="primary"
-                    variant="tonal"
-                  >
-                    <VImg :src="avatar1" />
-                  </VAvatar>
-                </VBadge>
-              </VListItemAction>
-            </template>
+        <!-- 👉 FAQ -->
+        <VListItem link>
+          <template #prepend>
+            <VIcon class="me-2" icon="tabler-help" size="22" />
+          </template>
+          <VListItemTitle>FAQ</VListItemTitle>
+        </VListItem>
 
-            <VListItemTitle class="font-weight-semibold">
-              John Doe
-            </VListItemTitle>
-            <VListItemSubtitle>Admin</VListItemSubtitle>
-          </VListItem>
+        <!-- Divider -->
+        <VDivider class="my-2" />
 
-          <VDivider class="my-2" />
-
-          <!-- 👉 Profile -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-user"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Profile</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Settings -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-settings"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Settings</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Pricing -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-currency-dollar"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Pricing</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 FAQ -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-help"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>FAQ</VListItemTitle>
-          </VListItem>
-
-          <!-- Divider -->
-          <VDivider class="my-2" />
-
-          <!-- 👉 Logout -->
-          <VListItem to="/login">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-logout"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Logout</VListItemTitle>
-          </VListItem>
-        </VList>
-      </VMenu>
-      <!-- !SECTION -->
-    </VAvatar>
-  </VBadge>
+        <!-- 👉 Logout -->
+        <VListItem @click="logout">
+          <template #prepend>
+            <VIcon class="me-2" icon="tabler-logout" size="22" />
+          </template>
+          <VListItemTitle>退出登录</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
+    <!-- !SECTION -->
+  </VAvatar>
+  <!-- </VBadge> -->
 </template>
+
+<style scoped>
+.userData {
+  margin-inline-end: 0.5rem;
+  text-align: end;
+}
+
+.userName {
+  font-weight: 600;
+}
+
+.userRole {
+  color: #b9b9c3;
+  font-size: 12px;
+}
+</style>

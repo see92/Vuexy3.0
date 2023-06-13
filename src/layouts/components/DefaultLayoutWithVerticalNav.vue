@@ -1,17 +1,18 @@
 <script setup>
-import navItems from '@/navigation/vertical'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import navItems from "@/navigation/vertical";
+import { useThemeConfig } from "@core/composable/useThemeConfig";
 
 // Components
-import Footer from '@/layouts/components/Footer.vue'
-import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
-import UserProfile from '@/layouts/components/UserProfile.vue'
+import Footer from "@/layouts/components/Footer.vue";
+import NavbarThemeSwitcher from "@/layouts/components/NavbarThemeSwitcher.vue";
+import UserProfile from "@/layouts/components/UserProfile.vue";
+import AddFile from "@/layouts/components/AddFile.vue";
 
 // @layouts plugin
-import { VerticalNavLayout } from '@layouts'
+import { VerticalNavLayout } from "@layouts";
 
-const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
-const { width: windowWidth } = useWindowSize()
+const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig();
+const { width: windowWidth } = useWindowSize();
 </script>
 
 <template>
@@ -25,13 +26,11 @@ const { width: windowWidth } = useWindowSize()
           class="ms-n3"
           @click="toggleVerticalOverlayNavActive(true)"
         >
-          <VIcon
-            size="26"
-            icon="tabler-menu-2"
-          />
+          <VIcon size="26" icon="tabler-menu-2" />
         </IconBtn>
 
-        <NavbarThemeSwitcher />
+        <!-- <NavbarThemeSwitcher /> -->
+        <AddFile />
 
         <VSpacer />
 
@@ -41,18 +40,15 @@ const { width: windowWidth } = useWindowSize()
 
     <!-- 👉 Pages -->
     <RouterView v-slot="{ Component }">
-      <Transition
-        :name="appRouteTransition"
-        mode="out-in"
-      >
+      <Transition :name="appRouteTransition" mode="out-in">
         <Component :is="Component" />
       </Transition>
     </RouterView>
 
     <!-- 👉 Footer -->
-    <template #footer>
+    <!-- <template #footer>
       <Footer />
-    </template>
+    </template> -->
 
     <!-- 👉 Customizer -->
     <!-- <TheCustomizer /> -->
