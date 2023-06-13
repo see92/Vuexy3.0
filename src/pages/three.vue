@@ -58,14 +58,14 @@
     <!-- <VTextarea v-model="message" placeholder="Message" /> -->
     <VDivider />
     <div class="d-flex">
-      <div class="width:100px">
-    <appTextField v-model="file" density="compact" style="width: 100px;">
-      <template #prepend-inner style="width: 100px;">
-        <div class="text-sm text-disabled" >附件：</div>
+      <div >
+    <appTextField v-model="file" density="compact" style="width: 100px;" class="text-disabled" >
+      <template #prepend-inner >
+        <div class="text-sm text-disabled" style="width: 70px;">附件：</div>
       </template>
     </appTextField>
   </div>
-    <VBtn></VBtn>
+    <VBtn>上传附件</VBtn>
   </div>
 <!-- 
     <div class="d-flex align-center px-5 py-4">
