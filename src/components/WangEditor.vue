@@ -1,20 +1,7 @@
 <template>
-  <div style="border: 1px solid #ccc; border-radius: 8px;">
-    <Toolbar
-      class="editorTop"
-      style="border-bottom: 1px solid #ccc;"
-      :editor="editorRef"
-      :defaultConfig="toolbarConfig"
-      :mode="mode"
-    />
-    <Editor
-      class="editorBottom"
-      style="height: 220px; overflow-y: hidden;"
-      v-model="valueHtml"
-      :defaultConfig="editorConfig"
-      :mode="mode"
-      @onCreated="handleCreated"
-    />
+  <div style="border: 1px solid #ccc;">
+    <Toolbar class="editorTop" style="border-bottom: 1px solid #ccc;" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
+    <Editor class="editorBottom" style="height: 220px; overflow-y: hidden;" v-model="valueHtml" :defaultConfig="editorConfig" :mode="mode" @onCreated="handleCreated" />
   </div>
 </template>
 

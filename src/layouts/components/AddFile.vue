@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from "vue";
-
+import { useRouter } from "vue-router";
 const list = reactive([
   {
     title: "发送文件",
@@ -15,8 +15,12 @@ const list = reactive([
     value: "3",
   },
 ]);
+const router = useRouter();
 const menuClick = (item) => {
   console.log(item.value);
+  if (item.value == 1) {
+    router.push({ name: "second-page" });
+  }
 };
 </script>
 <template>
@@ -29,12 +33,7 @@ const menuClick = (item) => {
     </template>
 
     <VList>
-      <VListItem
-        v-for="item in list"
-        :key="item.value"
-        :value="item.value"
-        @click="menuClick(item)"
-      >
+      <VListItem v-for="item in list" :key="item.value" :value="item.value" @click="menuClick(item)">
         <VListItemTitle>{{ item.title }}</VListItemTitle>
       </VListItem>
     </VList>
