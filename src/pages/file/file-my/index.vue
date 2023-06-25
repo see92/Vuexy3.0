@@ -44,7 +44,7 @@
           </VList>
         </VMenu>
         <!-- 新建文件夹和投递为一组 -->
-        <div class="d-flex gap-3" v-if="true">
+        <div class="d-flex gap-3" v-if="false">
           <!--  创建文件夹 -->
           <VBtn prepend-icon="tabler-plus" @click="changeAddFile">
             <span style="font-size: 13px;">新建文件夹</span>
@@ -55,7 +55,7 @@
           </VBtn>
         </div>
         <!-- 点击选中后的标签 -->
-        <div v-if="false" class=" d-flex gap-3">
+        <div v-if="true" class=" d-flex gap-3">
           <VBtn>
             <VIcon icon="tabler-download" size="15" />
             <span style="font-size: 13px;">下载</span>
@@ -71,8 +71,10 @@
             <VIcon icon="tabler-send" size="15" /> <span style="font-size: 13px;">投递</span>
           </VBtn>
         </div>
+
       </div>
     </v-card-text>
+    <myFileTable />
     <!-- 弹窗部分 -->
     <div class="modal">
       <!-- 新建文件夹 -->
@@ -171,8 +173,9 @@
 
 <script setup>
 import { reactive } from 'vue'
-import privateLink from './view/privateLink.vue'
-import publicLink from './view/publicLink.vue'
+import privateLink from './view/privateLink.vue'  //公开链接
+import publicLink from './view/publicLink.vue'  //私密链接
+import myFileTable from './view/myFileTable.vue'
 const list = reactive([
   { title: '上传文件', value: 1 },
   { title: '上传文件夹', value: 2 }
@@ -191,7 +194,7 @@ const fileMy = reactive({
   send: false,  //投递弹窗
   targetSpace: 0, //目标空间
   downFile: false,  //文件下载
-  createLink: true,  //创建分享链接
+  createLink: false,  //创建分享链接
   linkTab: null,  //标签页切换
 })
 const tabs = [

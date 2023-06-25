@@ -7,9 +7,7 @@
           <VDivider />
           <!-- 分享范围 -->
           <div>
-            任何人
-            平台所有用户
-            平台内部用户
+            <VRadioGroup></VRadioGroup>
           </div>
         </div>
       </VCard>
